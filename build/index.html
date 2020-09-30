@@ -1,0 +1,521 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-e9bde216.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-d66575f8.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#how-it-works" class="toc-h2 toc-link" data-title="How it works">How it works</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#using-upstride-engine" class="toc-h1 toc-link" data-title="Using Upstride Engine">Using Upstride Engine</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#introduction-2" class="toc-h2 toc-link" data-title="Introduction">Introduction</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#hycor-api-1-2" class="toc-h1 toc-link" data-title="Hycor API 1.2">Hycor API 1.2</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#module-upstride" class="toc-h2 toc-link" data-title="Module: upstride">Module: upstride</a>
+                  </li>
+                  <li>
+                    <a href="#submodule-upstride-type1" class="toc-h2 toc-link" data-title="Submodule: upstride.type1">Submodule: upstride.type1</a>
+                  </li>
+                  <li>
+                    <a href="#submodule-upstride-type2" class="toc-h2 toc-link" data-title="Submodule: upstride.type2">Submodule: upstride.type2</a>
+                  </li>
+                  <li>
+                    <a href="#submodule-upstride-type3" class="toc-h2 toc-link" data-title="Submodule: upstride.type3">Submodule: upstride.type3</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#compromise-between-model-size-and-accuracy-performance-the-39-factor-39-parameter" class="toc-h1 toc-link" data-title="Compromise between model size and accuracy performance (the 'factor' parameter)">Compromise between model size and accuracy performance (the 'factor' parameter)</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://zoo.upstride.io/#/'>connect to our model zoo</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the UpStride Documentation!</p>
+
+<p>UpStride improves the overall performance of neural networks by leveraging the properties of our proprietary datatype, Hycor.</p>
+
+<p>It offers a computational engine (that packages the Hycor) and a Python API to be used with TensorFlow/Keras.</p>
+
+<p>Among the benefits of using UpStride instead of pure TensorFlow:</p>
+
+<ul>
+<li>Reduce in up to 10x the amount of data necessary to train a neural net in computer-vision tasks while keeping the same accuracy.</li>
+<li>Boost the accuracy performance of your neural network</li>
+<li>Generate more compact models (less floating-point parameters). This eases the deployment of neural nets in low-power and mobile devices, reducing energy consumption.</li>
+</ul>
+
+<p>Check out the video below for an overview of UpStride.</p>
+
+<p><a href="https://youtu.be/QBTp95evukE"><img src="images/thumbnail_video-b0a69d04.jpg" alt="" /></a></p>
+<h2 id='how-it-works'>How it works</h2>
+<p>UpStride integrates seamlessly with TensorFlow 2.2 (other frameworks, e.g. PyTorch, will be available in the future). It is assumed the user is experienced with development based on TensorFlow/Keras.</p>
+
+<p>We offer two ways to use UpStride, either on the cloud or on premises:</p>
+
+<ol>
+<li>UpStride Cloud:
+
+<ul>
+<li>Make training and inference requests using the UpStride REST API</li>
+<li>Expose trained models to the internet by creating unique endpoints</li>
+<li>Command-line interface (CLI) and simple web interface</li>
+</ul></li>
+<li>UpStride Enterprise:
+
+<ul>
+<li>Docker is shipped to the client</li>
+<li>It can be installed in a local server/machine (requires the purchase of a license)</li>
+<li>Access to full-blown functionalities of the UpStride Python API.</li>
+</ul></li>
+</ol>
+
+<p>Here is how UpStride integrates within a training/inference AI pipeline:</p>
+
+<p><img src="images/api_overall-e1ab3a02.png" alt="" /></p>
+
+<p>The dashed box represents the UpStride Docker container. The user runs the docker, loads her datasets and scripts, and uses the UpStride API to build neural networks that leverage
+the UpStride engine computational power.</p>
+<h1 id='using-upstride-engine'>Using Upstride Engine</h1><h3 id='introduction-2'>Introduction</h3>
+<blockquote>
+<p>This is a simple Upstride neural network:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">from</span> <span class="nn">upstride.type2.tf.keras</span> <span class="kn">import</span> <span class="n">layers</span>
+
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">TF2Upstride</span><span class="p">()(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Activation</span><span class="p">(</span><span class="s">'relu'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Activation</span><span class="p">(</span><span class="s">'relu'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Flatten</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">100</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Upstride2TF</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">keras</span><span class="p">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">inputs</span><span class="p">],</span> <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+</code></pre></div>
+<blockquote>
+</blockquote>
+
+<p>UpStride&#39;s engine is divided in three main modules type1, type2 and type3.</p>
+
+<p>Each module has his special capabilities and should be used to enhance a Deep Neural Networks in their specific cases.</p>
+
+<p>Every module encapsulate a API similar to Keras.</p>
+
+<p>To use it, start by importing the layers package from the upstride type you want to use. </p>
+
+<p>Then the neural network can be define using keras API. Start by defining a Input, convert it to Upstride by calling <code>layers.TF2Upstride</code> and build
+the neural network the same way you do with Keras. At the end of the neural network call <code>layers.Upstride2TF</code> to convert back upstride tensor to 
+TensorFlow tensor.</p>
+
+<p>For training and inference, all TensorFlow tools can be used (distribute strategies, mixed-precision training...)</p>
+<h1 id='hycor-api-1-2'>Hycor API 1.2</h1>
+<p>The Hycor is UpStride&#39;s unique and proprietary datatype. The following documentation describes how one can use and benefit from the Hycor-based layers to build neural networks.</p>
+
+<p>This is the documentation of the Hycor API 1.2.</p>
+
+<p>Only Python 3.6 or later is supported.</p>
+<h2 id='module-upstride'>Module: upstride</h2>
+<p>The main module, where the UpStride custom layers are implemented.</p>
+
+<p>UpStride&#39;s engine is divided in three main modules <code>type1</code>, <code>type2</code> and <code>type3</code>.</p>
+
+<p>Each module has his special capabilities and should be used to enhance a Deep Neural Networks in their specific cases.</p>
+
+<p>Every module has the same the same type of layers and functions availables.</p>
+<h2 id='submodule-upstride-type1'>Submodule: upstride.type1</h2>
+<blockquote>
+<p>to import type 1</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upstride.type1.tf.keras</span> <span class="kn">import</span> <span class="n">layers</span>
+</code></pre></div>
+<blockquote>
+</blockquote>
+
+<p>This submodule should be used to deal with 2D data like points, lines, polygons or grayscale images. The type1 submodule layers are accesible by:</p>
+<h2 id='submodule-upstride-type2'>Submodule: upstride.type2</h2>
+<blockquote>
+<p>to import type 2</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upstride.type2.tf.keras</span> <span class="kn">import</span> <span class="n">layers</span>
+</code></pre></div>
+<blockquote>
+</blockquote>
+
+<p>This submodule should be used to deal with simple 3D data like 3D point cloud, 3D lines, polyhedrons or colored images. The type2 submodule layers are accesible by:</p>
+
+<p>import upstride.type2.tf.keras.layers as uplayers</p>
+<h2 id='submodule-upstride-type3'>Submodule: upstride.type3</h2>
+<blockquote>
+<p>to import type 3</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">upstride.type3.tf.keras</span> <span class="kn">import</span> <span class="n">layers</span>
+</code></pre></div>
+<blockquote>
+</blockquote>
+
+<p>This submodule should be used to deal with more complex 3D data like 3D point cloud, 3D lines, polyhedrons or colored images. The type3 submodule layers are accesible by:</p>
+<h1 id='compromise-between-model-size-and-accuracy-performance-the-39-factor-39-parameter'>Compromise between model size and accuracy performance (the &#39;factor&#39; parameter)</h1>
+<blockquote>
+<p>This is a simple Upstride neural network with factor parameter:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">from</span> <span class="nn">upstride.type2.tf.keras</span> <span class="kn">import</span> <span class="n">layers</span>
+
+<span class="n">factor</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">TF2Upstride</span><span class="p">()(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span> <span class="o">//</span> <span class="n">factor</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Activation</span><span class="p">(</span><span class="s">'relu'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span> <span class="o">//</span> <span class="n">factor</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Activation</span><span class="p">(</span><span class="s">'relu'</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Flatten</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">100</span> <span class="o">//</span> <span class="n">factor</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Upstride2TF</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="p">.</span><span class="n">keras</span><span class="p">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">inputs</span><span class="p">],</span> <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+</code></pre></div>
+<blockquote>
+</blockquote>
+
+<p>The simplest way to adapt your own code is described above: you only need to call the UpStride layers instead of regular TensorFlow. It allows the user to readily benefit from the superior learning capabilities of our Engine. This is the &quot;vanilla&quot; way of using UpStride.</p>
+
+<p>However, due to the way the underlying UpStride mathematics is implemented, the vanilla approach results in a model that contains more free parameters than its pure TensorFlow counterpart. That&#39;s the way to go if you are after accuracy performance at all cost and can afford training bigger models.</p>
+
+<p>However, there are use cases that ask for an increase in accuracy performance but are also constrained by the final size of the model. This is the case for any application that deploys intelligence on the edge, e.g., smartphones, IoTs -- every extra megabyte, or even kilobyte, may prevent the model to fit in the limited memory (RAM and storage) of edge devices.</p>
+
+<p>The factor parameter L enables the user to make a compromise between overall accuracy performance and total number of free parameters of a model.</p>
+
+<p>Let&#39;s revisit the code snippet of the examples above:</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
