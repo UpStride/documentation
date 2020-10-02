@@ -341,6 +341,17 @@
           <li>
             <a href="#compromise-between-model-size-and-accuracy-performance-the-39-factor-39-parameter" class="toc-h1 toc-link" data-title="Compromise between model size and accuracy performance (the 'factor' parameter)">Compromise between model size and accuracy performance (the 'factor' parameter)</a>
           </li>
+          <li>
+            <a href="#type-2-specificities" class="toc-h1 toc-link" data-title="Type 2 specificities">Type 2 specificities</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#tf2upstride" class="toc-h2 toc-link" data-title="Tf2Upstride">Tf2Upstride</a>
+                  </li>
+                  <li>
+                    <a href="#upstride2tf" class="toc-h2 toc-link" data-title="Upstride2TF">Upstride2TF</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://zoo.upstride.io/#/'>connect to our model zoo</a></li>
@@ -509,6 +520,80 @@ TensorFlow tensor.</p>
 <p>The factor parameter L enables the user to make a compromise between overall accuracy performance and total number of free parameters of a model.</p>
 
 <p>Let&#39;s revisit the code snippet of the examples above:</p>
+<h1 id='type-2-specificities'>Type 2 specificities</h1>
+<p>When working in type 2, some options are available to improve the neural-network performance.</p>
+<h2 id='tf2upstride'>Tf2Upstride</h2>
+<p>Several strategies are available to convert TensorFlow tensors to Upstride tensors.</p>
+
+<blockquote>
+<p>Default</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">TF2Upstride</span><span class="p">()(</span><span class="n">inputs</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+</blockquote>
+
+<ul>
+<li><code>default</code>: our data structure is initialized with 0.
+<img src="images/default2-063e69ea.png" alt="" /></li>
+</ul>
+
+<blockquote>
+<p>joint</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">TF2Upstride</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s">'joint'</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+</blockquote>
+
+<ul>
+<li><code>joint</code>: the color information is used to create our data structure</li>
+</ul>
+
+<p><img src="images/join-e760a717.png" alt="" /></p>
+
+<blockquote>
+<p>grayscale</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">TF2Upstride</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s">'grayscale'</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+</blockquote>
+
+<ul>
+<li><code>grayscale</code>: both the rgb and grayscale information are used to create our data structure
+<img src="images/grayscale-4e8333bf.png" alt="" /></li>
+</ul>
+
+<blockquote>
+<p>learned</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">TF2Upstride</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s">'learned'</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+</blockquote>
+
+<ul>
+<li><code>learned</code>: a small neural network (2 convolutions with 3x3 kernel and 3 channels) is learning a mapping to project the information to our data structure. This method is a bit more expensive but may give better results
+<img src="images/learned3-dc008338.png" alt="" /></li>
+</ul>
+<h2 id='upstride2tf'>Upstride2TF</h2>
+<blockquote>
+<p>To concatenate the Hycor into a single vector</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Upstride2TF</span><span class="p">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="s">"concat"</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+</blockquote>
+
+<p>Two strategies are possible:</p>
+
+<ul>
+<li>default</li>
+<li>concat</li>
+</ul>
+
+<p><code>default</code> mode outputs a tensor that keeps only the first slot of the Hycor, whereas <code>concat</code> generates a vector by merging all the slots of the Hycor together.</p>
 
       </div>
       <div class="dark-box">
