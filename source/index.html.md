@@ -190,4 +190,71 @@ The factor parameter L enables the user to make a compromise between overall acc
 
 Let's revisit the code snippet of the examples above:
 
+# Type 2 specificities
+
+When working in type 2, some options are available to improve the neural-network performance.
+
+## Tf2Upstride
+
+Several strategies are available to convert TensorFlow tensors to Upstride tensors.
+
+> Default
+
+```python
+x = layers.TF2Upstride()(inputs)
+```
+>
+
+- `default`: our data structure is initialized with 0.
+![](images/default2.png)
+
+> joint
+
+```python
+x = layers.TF2Upstride(strategy='joint')(inputs)
+```
+>
+
+- `joint`: the color information is used to create our data structure
+
+![](images/join.png)
+
+>
+grayscale
+
+```python
+x = layers.TF2Upstride(strategy='grayscale')(inputs)
+```
+>
+
+- `grayscale`: both the rgb and grayscale information are used to create our data structure
+![](images/grayscale.png)
+
+> learned
+
+```python
+x = layers.TF2Upstride(strategy='learned')(inputs)
+```
+>
+
+- `learned`: a small neural network (2 convolutions with 3x3 kernel and 3 channels) is learning a mapping to project the information to our data structure. This method is a bit more expensive but may give better results
+![](images/learned3.png)
+
+## Upstride2TF
+
+
+> To concatenate the Hycor into a single vector
+
+```python
+x = layers.Upstride2TF(strategy = "concat")(x)
+```
+>
+
+Two strategies are possible:
+
+- default
+- concat
+
+`default` mode outputs a tensor that keeps only the first slot of the Hycor, whereas `concat` generates a vector by merging all the slots of the Hycor together.
+
 
