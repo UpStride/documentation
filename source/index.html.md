@@ -33,7 +33,7 @@ Among the benefits of using UpStride instead of pure TensorFlow:
 
 Check out the video below for an overview of UpStride.
 
-[![](images/thumbnail_video.jpg)](https://youtu.be/QBTp95evukE)
+[![](images/thumbnail_video.png)](https://youtu.be/QBTp95evukE)
 
 
 ## How it works
