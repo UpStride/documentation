@@ -71,8 +71,9 @@ You only need two pieces of information to download containers images in the reg
 
 Those information cannot be guessed out. There are provided during Upstride's onboarding or products delivery. Please contact us to have more information. <br> [@upstride](https://ww2.upstride.io/contact-us-page/)
 
-When you received those information, use standard docker commands to login and pull docker images:
-```python
+When you received those information, use standard docker commands to login and pull docker images: 
+
+```
 docker login -u username -p password registry.us.upstride.io
 docker pull registry.us.upstride.io/image_repo/image_name:image_tag
 ```
