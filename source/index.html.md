@@ -58,6 +58,19 @@ Here is how UpStride integrates within a training/inference AI pipeline:
 The dashed box represents the UpStride Docker container. The user runs the docker, loads her datasets and scripts, and uses the UpStride API to build neural networks that leverage
 the UpStride engine computational power.
 
+# Getting Upstride Engine
+
+Upstride's products are packaged into ![docker](https://docs.docker.com) containers images. The images are available in private docker registry listed below:
+    - ![registry.us.upstride.io](https://registry.us.upstride.io )  --> for clients in the US
+    - ![registry.upstride.io](https://registry.upstride.io )  --> for clients in the Europe
+
+It is mandatory to use the docker ![CLI](https://docs.docker.com/engine/reference/commandline/cli/) to interact with the private registries. Don't try to download then the content of the registry with the webbrowser. You will be automatically redirected to this document. <br>
+You only need two pieces of information to download containers images in the registry:
+    1- Login credentials i-e username and password  
+    2- The exact docker image's name 
+
+Those information cannot be guessed out. There are provided during Upstride's onboarding or products delivery. Please contact us to have more information. <br> ![@upstride](https://ww2.upstride.io/contact-us-page/)
+
 # Using Upstride Engine
 
 ### Introduction
