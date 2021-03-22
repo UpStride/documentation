@@ -248,8 +248,11 @@
 .highlight .kd {
   color: #cb4b16;
 }
-.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
   color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
 }
 .highlight .sr {
   color: #2aa198;
@@ -312,6 +315,9 @@
                     <a href="#how-it-works" class="toc-h2 toc-link" data-title="How it works">How it works</a>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#getting-upstride-engine" class="toc-h1 toc-link" data-title="Getting Upstride Engine">Getting Upstride Engine</a>
           </li>
           <li>
             <a href="#using-upstride-engine" class="toc-h1 toc-link" data-title="Using Upstride Engine">Using Upstride Engine</a>
@@ -406,7 +412,22 @@
 
 <p>The dashed box represents the UpStride Docker container. The user runs the docker, loads her datasets and scripts, and uses the UpStride API to build neural networks that leverage
 the UpStride engine computational power.</p>
-<h1 id='using-upstride-engine'>Using Upstride Engine</h1><h3 id='introduction-2'>Introduction</h3>
+<h1 id='getting-upstride-engine'>Getting Upstride Engine</h1>
+<p>Upstride&#39;s products are packaged into <a href="https://docs.docker.com">docker</a> containers images. The images are available in private docker registry listed below: <br>
+<code>registry.us.upstride.io</code> --&gt; for clients in the US <br>
+<code>registry.upstride.io</code> --&gt; for clients in the Europe <br></p>
+
+<p>It is mandatory to use the docker <a href="https://docs.docker.com/engine/reference/commandline/cli/">cli</a> to interact with the private registries. Don&#39;t try to download the content of the registry with the webbrowser. You will be automatically redirected to this document. <br>
+You only need two pieces of information to download containers images in the registry: <br>
+1. Login credentials i-e username and password  <br>
+2. The exact docker image&#39;s name <br></p>
+
+<p>Those information cannot be guessed out. There are provided during Upstride&#39;s onboarding or products delivery. Please contact us to have more information. <br> <a href="https://ww2.upstride.io/contact-us-page/">@upstride</a></p>
+
+<p>When you received those information, use standard docker commands to login and pull docker images: </p>
+<div class="highlight"><pre class="highlight plaintext"><code>docker login -u username -p password registry.us.upstride.io
+docker pull registry.us.upstride.io/image_repo/image_name:image_tag
+</code></pre></div><h1 id='using-upstride-engine'>Using Upstride Engine</h1><h3 id='introduction-2'>Introduction</h3>
 <blockquote>
 <p>This is a simple Upstride neural network:</p>
 </blockquote>

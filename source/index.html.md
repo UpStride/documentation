@@ -60,16 +60,23 @@ the UpStride engine computational power.
 
 # Getting Upstride Engine
 
-Upstride's products are packaged into ![docker](https://docs.docker.com) containers images. The images are available in private docker registry listed below:
-    - ![registry.us.upstride.io](https://registry.us.upstride.io )  --> for clients in the US
-    - ![registry.upstride.io](https://registry.upstride.io )  --> for clients in the Europe
+Upstride's products are packaged into [docker](https://docs.docker.com) containers images. The images are available in private docker registry listed below: <br>
+`registry.us.upstride.io` --> for clients in the US <br>
+`registry.upstride.io` --> for clients in the Europe <br>
 
-It is mandatory to use the docker ![CLI](https://docs.docker.com/engine/reference/commandline/cli/) to interact with the private registries. Don't try to download then the content of the registry with the webbrowser. You will be automatically redirected to this document. <br>
-You only need two pieces of information to download containers images in the registry:
-    1- Login credentials i-e username and password  
-    2- The exact docker image's name 
+It is mandatory to use the docker [cli](https://docs.docker.com/engine/reference/commandline/cli/) to interact with the private registries. Don't try to download the content of the registry with the webbrowser. You will be automatically redirected to this document. <br>
+You only need two pieces of information to download containers images in the registry: <br>
+1. Login credentials i-e username and password  <br>
+2. The exact docker image's name <br>
 
-Those information cannot be guessed out. There are provided during Upstride's onboarding or products delivery. Please contact us to have more information. <br> ![@upstride](https://ww2.upstride.io/contact-us-page/)
+Those information cannot be guessed out. There are provided during Upstride's onboarding or products delivery. Please contact us to have more information. <br> [@upstride](https://ww2.upstride.io/contact-us-page/)
+
+When you received those information, use standard docker commands to login and pull docker images: 
+
+```
+docker login -u username -p password registry.us.upstride.io
+docker pull registry.us.upstride.io/image_repo/image_name:image_tag
+```
 
 # Using Upstride Engine
 
